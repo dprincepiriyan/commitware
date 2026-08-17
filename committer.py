@@ -2,6 +2,7 @@ import os
 import random
 import string
 import subprocess
+import sys
 import time
 
 def generate_random_text(length=12):
@@ -51,6 +52,7 @@ def main():
         print("Git push failed. Do you have a remote configured and an upstream branch set?")
         print("You may need to run: git push -u origin <branch-name>")
         print(f"Error details: {e.stderr.decode('utf-8').strip()}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
